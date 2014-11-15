@@ -1,0 +1,38 @@
+zadanie 2)
+CREATE VIEW JulitaMusial_WymiarDostawca as (
+SELECT
+SupplierID,
+CompanyName,
+City,
+Country
+from
+Suppliers);
+
+
+zadanie 3)
+CREATE VIEW Musial_WymiarProduktu AS(
+SELECT Products.ProductID, Products.ProductName, Products.CategoryID, Categories.CategoryName 
+FROM Products
+JOIN Categories 
+ON 
+Products.CategoryID=Categories.CategoryID);
+
+
+
+zadanie 4)
+CREATE VIEW Musial_FaktyProdukty AS(
+SELECT
+ProductID, SupplierID, UnitsInStock
+FROM
+Products);
+
+zadanie 5)
+DROP VIEW Musial_WymiarDostawca;
+DROP VIEW Musial_WymiarProdukt;
+DROP VIEW Musial_FaktyProdukty;
+
+
+zadanie 6)
+SELECT * INTO JMusial_FaktyProdukty FROM Musial_FaktyProdukty;
+SELECT * INTO JMusial_WymiarDostawca FROM Musial_WymiarDostawca;
+SELECT * INTO JMusial_WymiarProduktu FROM Musial_WymiarProduktu;
